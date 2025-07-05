@@ -1,6 +1,5 @@
 <script setup>
-
-import { Link } from '@inertiajs/inertia-vue3';
+import { Link, router } from '@inertiajs/vue3';
 
 defineProps({
     blogs: Array,
