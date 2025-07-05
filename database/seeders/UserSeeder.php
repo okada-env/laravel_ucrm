@@ -16,12 +16,10 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::firstOrCreate(
-            ['email' => 'kazuki@test.com'],
-            [
-                'name' => 'kazuki',
-                'password' => \Hash::make('password123'),
-            ]
-        );
+        DB::table('users')->insert([
+            'name' => 'kazuki',
+            'email' => 'kazuki@test.com',
+            'password' => Hash::make('password123'),
+        ]);
     }
 }
