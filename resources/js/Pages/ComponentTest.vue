@@ -3,6 +3,8 @@ import GuestLayout from '@/Layouts/Guest.vue';
 import Label from '@/Components/Label.vue';
 import Label from '@/Components/Input.vue';
 
+const emitTest = e => console.log(e)
+
 </script>
 
 <template>
