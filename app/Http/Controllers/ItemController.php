@@ -39,7 +39,13 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        //
+        Item::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'memo' => $request->memo,
+        ]);
+        return to_route('items.index')
+        ->with(['message' => '登録しました。', 'status' => 'success']);
     }
 
     /**
@@ -50,7 +56,9 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return Inertia::render('Items/show', [
+            'item' => $item
+        ]);
     }
 
     /**

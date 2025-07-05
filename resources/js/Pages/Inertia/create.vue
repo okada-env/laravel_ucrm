@@ -1,5 +1,6 @@
 <script setup>
 import { Link, useForm } from '@inertiajs/vue3';
+import ValidationErrors from '@/Components/ValidationErrors.vue';
 
 defineProps({
     errors: Object,
@@ -16,6 +17,7 @@ const submit = () => {
 </script>
 
 <template>
+    <ValidationErrors :errors="errors" />
     <div>
         <div class="mb-4">
             <Link :href="route('inertia.index')" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
@@ -59,7 +61,7 @@ const submit = () => {
                 
                 <div class="flex items-center justify-between">
                     <button 
-                        type="submit" 
+                        
                         :disabled="form.processing"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         :class="{ 'opacity-50': form.processing }"

@@ -1,6 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
+import FlashMessage from '@/Components/FlashMessage.vue';
 
 defineProps({
   items: Array
@@ -9,9 +10,9 @@ defineProps({
 </script>
 
 <template>
-    <Head title="商品一覧" />
-
     <AuthenticatedLayout>
+        <Head title="商品一覧" />
+        
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 商品一覧
@@ -36,7 +37,6 @@ defineProps({
                                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">商品名</th>
                                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">価格</th>
                                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">ステータス</th>
-                                    
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +45,7 @@ defineProps({
                                       <Link class="text-blue-400" :href="route('items.show', { item: item.id })">
                                       {{ item.id }}
                                       </Link>
-                                      </td>
+                                    </td>
                                     <td class="border-b-2 border-gray-200 px-4 py-3">{{ item.name }}</td>
                                     <td class="border-b-2 border-gray-200 px-4 py-3">{{ item.price }}</td>
                                     <td class="border-b-2 border-gray-200 px-4 py-3">
@@ -56,7 +56,6 @@ defineProps({
                                 </tbody>
                               </table>
                             </div>
-                            
                           </div>
                         </section>
                     </div>
