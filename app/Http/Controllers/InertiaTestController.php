@@ -10,7 +10,9 @@ class InertiaTestController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Inertia/index');
+        return Inertia::render('Inertia/index',[
+            'blogs' => InertiaTest::all(),
+        ]);
     }
 
     public function create()
