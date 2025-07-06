@@ -11,5 +11,6 @@ const nl2br = (str) => {
     const dd = ("0"+today.getDate()).slice(-2);
     return yyyy+'-'+mm+'-'+dd;
   }
+
   
   export { nl2br, getToday }
