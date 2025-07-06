@@ -30,7 +30,7 @@ class PurchaseController extends Controller
 
         // dd($orders);
 
-        return Inertia::render('Purchases/Index', [
+        return Inertia::render('Purchases/index', [
             'orders' => $orders
         ]);
 
@@ -108,9 +108,7 @@ class PurchaseController extends Controller
         customer_name, status, created_at')
         ->get();
 
-        // dd($items, $order);
-
-        return Inertia::render('Purchases/Show', [
+        return Inertia::render('Purchases/show', [
             'items' => $items,
             'order' => $order
         ]);
@@ -153,7 +151,7 @@ class PurchaseController extends Controller
         customer_name, status, created_at')
         ->get();
 
-        return Inertia::render('Purchases/Edit', [
+        return Inertia::render('Purchases/edit', [
             'items' => $items,
             'order' => $order
         ]);
