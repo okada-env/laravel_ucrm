@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Purchase;
+use \App\Models\Purchase;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ItemSeeder::class,
-        ]); 
+            RankSeeder::class
+        ]);
+        
         \App\Models\Customer::factory(1000)->create();
 
         $items = \App\Models\Item::all();
@@ -30,6 +32,8 @@ class DatabaseSeeder extends Seeder
                 [ 'quantity' => rand(1, 5) ]
             );
         });
+
+        // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
