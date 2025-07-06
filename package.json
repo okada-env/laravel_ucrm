@@ -19,6 +19,7 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
-        "@inertiajs/vue3": "^2.0.14"
+        "@inertiajs/vue3": "^2.0.14",
+        "yubinbango-core2": "^0.6.3"
     }
 }
